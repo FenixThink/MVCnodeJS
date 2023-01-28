@@ -1,19 +1,19 @@
 import { Router } from "express";
 
 import {
+    createParticipant,
     getAllParticipants,
     getOneParticipants,
-    postParticipant,
     updateParticipants,
-    deleteParticipants
+    DeleteParticipants
   } from "../controllers/participants.controller.js";
 const router = Router();
 
-router.get("/participants", getAllParticipants);
-router.get("/participants:id", getOneParticipants);
-router.post("/participants", postParticipant);
-router.put("/participants:id", updateParticipants);
-router.delete("/participants:id", deleteParticipants);
+ router.post("/api/participants", createParticipant);
+ router.get("/api/participants", getAllParticipants);
+router.get("/api/participants/:id", getOneParticipants);
+router.put("/api/participants/:id", updateParticipants);
+router.delete("/api/participants/:id", DeleteParticipants); 
 
 
 export default router
